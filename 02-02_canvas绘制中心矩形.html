@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .cav {
+      height: 256px;
+      width: 256px;
+      background-color: #eeeeee;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="512" height="512" class="cav"></canvas>
+</body>
+
+</html>
+<script>
+  const canvas = document.querySelector('canvas')
+  const context = canvas.getContext('2d')
+
+  const rectSize = [100, 100]
+  context.fillStyle = 'red'
+  context.beginPath()
+  //第一种做法 
+  // context.rect(0.5 * (canvas.width - rectSize[0]), 0.5 * (canvas.height - rectSize[1]), ...rectSize)
+
+  //第二种做法
+  context.translate(-0.5 * rectSize[0], -0.5 * rectSize[1]);
+  context.rect(0.5 * canvas.width, 0.5 * canvas.height, ...rectSize)
+  context.fill()
+  context.restore()
+</script>
