@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <canvas width="512" height="256"></canvas>
+</body>
+
+</html>
+<script src="./rought.js">  </script>
+
+<script>
+  const rc = rough.canvas(document.querySelector('canvas'));
+
+  const hillOpts = { roughness: 2.8, strokeWidth: 1, fill: 'blue' };
+  rc.path('M76 256L176 156L276 256', hillOpts);
+  rc.path('M236 256L336 156L436 256', hillOpts);
+  rc.circle(256, 106, 105, {
+    stroke: 'red',
+    strokeWidth: 4,
+    fill: 'rgba(255, 255, 0, 0.4)',
+    fillStyle: 'solid',
+  });
+
+  // Math.hypot  平方和的平方根 计算向量的距离
+  // Math.atan2  与x轴的角度 可以表示线段的方向  返回从原点(0,0)到(x,y)点的线段与x轴正方向之间的平面角度(弧度值)，也就是Math.atan2(y,x)
+
+
+
+// v.x = v.length * Math.cos(v.dir);
+// v.y = v.length * Math.sin(v.dir);
+
+</script>
